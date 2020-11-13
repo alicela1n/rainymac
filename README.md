@@ -27,5 +27,5 @@ Enabling SSH in OS X:
 
 SSH into the emulation with this command:
 ```
-Connect using ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc localhost -p 5555
+ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc localhost -p 5555
 ```
