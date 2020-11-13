@@ -1,11 +1,14 @@
 # rainymac
 Easy setup PPC versions of Mac OS X in QEMU!
+![screenshot](/screenshots/screenshot.png)
 
 # Requirements
 * A decent processor, otherwise performance is terrible
 * \> 1GB RAM unless you adjust the configuration
-* At least 10GB of drive space, 32 or up recommended
+* \> 10GB of drive space, 32 or up recommended
 * ISO of the version of OS X you want, you can download Tiger with ``./download-osx.sh``
+* qemu-system-ppc installed
+* aria2 (for downloading iso)
 
 # Installation
 If you don't already have an iso you can download Tiger by running ``./download-osx.sh``.
