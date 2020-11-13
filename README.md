@@ -3,7 +3,7 @@ Easy setup PPC versions of Mac OS X in QEMU!
 
 # Requirements
 * A decent processor, otherwise performance is terrible
-* > 1GB RAM unless you adjust the configuration
+* \> 1GB RAM unless you adjust the configuration
 * At least 10GB of drive space, 32 or up recommended
 * ISO of the version of OS X you want, you can download Tiger with ``./download-osx.sh``
 
