@@ -11,7 +11,7 @@ args+=("-M $machine ")
 args+=("-hda $hdd ")
 args+=("-boot $bootdevice ")
 # Probably not so efficient but whatever it works
-if [ cdrom == on ]
+if [ $cdrom == on ]
 then
     args+=("-cdrom $iso")
 fi
