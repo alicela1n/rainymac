@@ -15,6 +15,10 @@ If you don't already have an iso you can download Tiger by running ``./download-
 * For easy installation run ``./install.sh`` and give it the path to your iso file, then when it's done you can close QEMU and run ``./rainymac.sh``.
 * You can also do the installation by enabling cdrom in the config, setting boot device to d, and setting it back to c after the installation.
 
+# Changing screen resolution
+You'll quickly notice that the screen resolution is very low, 800x600. You can change it in System Preferences > Displays
+![screen resolution](/screenshots/screenshot3.png)
+
 # Networking
 You can enable or disable networking in the config if desired.
 
