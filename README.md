@@ -23,7 +23,9 @@ You'll quickly notice that the screen resolution is very low, 800x600. You can c
 You can enable or disable networking in the config if desired.
 
 # VNC connection
-You can enable VNC in the `rainymac.cfg`.
+You can enable VNC in the `rainymac.cfg`. 
+Here's a screenshot of connecting to the emulated machine via VNC:
+![vnc](/screenshots/screenshot4.png)
 
 # SSH connection
 If you want to ssh into the emulation you can enable `ssh_forwarding` in the config.
