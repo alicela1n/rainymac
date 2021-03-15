@@ -44,13 +44,13 @@ fi
 
 if [ $ssh_forward == on ]
 then
-    echo "SSH is running on port 5555"
-    echo "Connect using ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc localhost -p 5555"
+    printf "SSH is running on port 5555\n"
+    printf "Connect using ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc localhost -p 5555\n"
 fi
 
 if [ $vnc == on ]
 then
-    echo "Starting with VNC on port 5900"
+    printf "Starting with VNC on port 5900\n"
     args+=("-vnc :0")
 fi
 

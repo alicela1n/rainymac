@@ -6,7 +6,7 @@ then
     read -p 'Enter virtual drive capacity in GB (ex: 8): ' capacity
 
     # Creating qcow2 image
-    echo "Creating rainymac.qcow2..."
+    printf "Creating rainymac.qcow2...\n"
     qemu-img create -f qcow2 rainymac.qcow2 $capacity\G
 fi
 
@@ -15,8 +15,8 @@ read -p "Enter path to iso file (ex: Tiger.iso): " install_iso
 
 source ./rainymac.cfg
 # Starting QEMU
-echo "Starting QEMU with minimal options for install"
-echo "If installer requires a disk 2, close QEMU and rerun the script with --stage2 and put in disk2"
+printf "Starting QEMU with minimal options for install\n"
+printf "If installer requires a disk 2, close QEMU and rerun the script with --stage2 and put in disk2\n"
 args=()
 args+=("-L pc-bios")
 args+=("-m $ram" )
