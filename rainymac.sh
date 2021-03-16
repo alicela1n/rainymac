@@ -4,12 +4,14 @@ source ./rainymac.cfg
 
 args=()
 args+=("-L pc-bios")
-args+=("-m $ram" )
+args+=("-m $ram")
 args+=("-boot $bootdevice ")
-args+=("-prom-env \"boot-args=$bootargs\" ")
-args+=("-M $machine ")
-args+=("-hda $hdd ")
-args+=("-boot $bootdevice ")
+args+=("-prom-env 'boot-args=$bootargs'")
+args+=("-prom-env 'vga-ndrv?=true'")
+args+=("-M $machine")
+args+=("-cpu $cpu")
+args+=("-hda $hdd")
+args+=("-boot $bootdevice")
 # Probably not so efficient but whatever it works
 if [ $cdrom == on ]
 then
@@ -55,4 +57,5 @@ then
 fi
 
 qemu_args="${args[*]}"
+printf "Starting qemu with options $qemu_args\n"
 $qemu $qemu_args

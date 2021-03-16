@@ -41,3 +41,30 @@ SSH into the emulation with this command:
 ```
 ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc localhost -p 5555
 ```
+
+# Audio in Tiger/Leopard
+* In OS X 10.4-10.4.3 it works out of the box, in anything higher you will need to do some work.
+Refer to one of my past blog posts:
+https://alicela1n.github.io/osx-10.5-ppc-in-qemu-with-working-audio
+* Enable audio by setting `usbaudio="on"` in `rainymac.cfg`
+
+# Installing Xcode and developer tools in OS X Tiger
+Requires dmg2img to be installed
+* Download [Xcode 2.5](https://download.developer.apple.com/Developer_Tools/xcode_2.5_developer_tools/xcode25_8m2558_developerdvd.dmg) from Apple's website.
+* Convert to img like so ``dmg2img ~/Downloads/xcode25_8m2558_developerdvd.dmg xcode.img``
+* Run ``./install.sh --stage2`` and point to xcode.img for iso path
+* Install `Xcode Tools.pkg`, with how slow this is it's normal to take a long time
+![xcode installing](/screenshots/screenshot5.png)
+* Shut down the emulation and start it with `./rainymac.sh`
+
+# Installing Tigerbrew
+Open Terminal or use ssh and run the following commands:
+Install Tigerbrew using this command:
+```
+$ ruby -e "$(curl -fsSkL raw.github.com/mistydemeo/tigerbrew/go/install)"
+```
+Add the path to your bash_profile with this command:
+```
+$ echo "export PATH=/usr/local/sbin:/usr/local/bin:$PATH" >> ~/.bash_profile
+```
+Install packages using `brew install` or get help with `brew help`.

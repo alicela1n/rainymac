@@ -20,8 +20,10 @@ printf "If installer requires a disk 2, close QEMU and rerun the script with --s
 args=()
 args+=("-L pc-bios")
 args+=("-m $ram" )
-args+=("-prom-env \"boot-args=\"-v\"\" ")
+args+=("-prom-env 'boot-args=$bootargs' ")
+args+=("-prom-env 'vga-ndrv?=true'")
 args+=("-M $machine ")
+args+=("-cpu $cpu")
 args+=("-hda rainymac.qcow2 ")
 args+=("-cdrom $install_iso")
 args+=("-nic none")
@@ -32,4 +34,5 @@ case $key in
 esac
 
 qemu_args="${args[*]}"
+printf "Starting qemu with options $qemu_args\n"
 $qemu $qemu_args
