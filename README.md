@@ -57,6 +57,18 @@ Requires dmg2img to be installed
 ![xcode installing](/screenshots/screenshot5.png)
 * Shut down the emulation and start it with `./rainymac.sh`
 
+# File transfer
+File transfer is something that's always been a problem with running legacy operating systems in virtual machines. Most methods are either insecure or flat out don't work. File transfer can be achieved in multiple ways, such as running an FTP server on the host, which is what I usually do, however this isn't very secure.
+
+You can also transfer files over SSH, not very secure but it works. However you shouldn't expect security from an ancient operating system in the first place. Example: `scp -oKexAlgorithms=+diffie-hellman-group1-sha1 -c 3des-cbc -P 5555 ~/Downloads/MacPorts-2.6.4-10.4-Tiger.dmg alice@localhost:~/Desktop`
+
+You can also use a disk image formatted as hfsplus or fat32. Copy your files to that disk image then pass it to QEMU. Since this is more advanced I won't cover that.
+
+# Installing MacPorts
+I prefer MacPorts over Tigerbrew for a lot of reasons, it's more compatible and has more packages. Thankfully MacPorts still supports Mac OS X 10.4! You can install it with the MacPorts package from [GitHub](https://github.com/macports/macports-base/releases/download/v2.6.4/MacPorts-2.6.4-10.4-Tiger.dmg)!
+
+You can install packages with `sudo port install`.
+
 # Installing Tigerbrew
 Open Terminal or use ssh and run the following commands:
 Install Tigerbrew using this command:
