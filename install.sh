@@ -1,5 +1,5 @@
-# Do not edit if you don't know what you're doing
 #!/usr/bin/env bash
+# Do not touch this if you don't know what you're doing !!
 
 if [ ! -f rainymac.qcow2 ]
 then
@@ -19,12 +19,12 @@ printf "Starting QEMU with minimal options for install\n"
 printf "If installer requires a disk 2, close QEMU and rerun the script with --stage2 and put in disk2\n"
 args=()
 args+=("-L pc-bios")
-args+=("-m $ram" )
-args+=("-prom-env 'boot-args=$bootargs' ")
+args+=("-m $ram")
+args+=("-prom-env 'boot-args=$bootargs'")
 args+=("-prom-env 'vga-ndrv?=true'")
-args+=("-M $machine ")
+args+=("-M $machine")
 args+=("-cpu $cpu")
-args+=("-hda rainymac.qcow2 ")
+args+=("-hda rainymac.qcow2")
 args+=("-cdrom $install_iso")
 args+=("-nic none")
 key="$1"

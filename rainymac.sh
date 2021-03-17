@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 # Do not touch this if you don't know what you're doing !!
+
+# Added this so the script can be executed from outside the directory it resides
+pushd $(dirname "${0}") > /dev/null
+basedir=$(pwd -L)
+
 source ./rainymac.cfg
 
 args=()
@@ -59,3 +64,4 @@ fi
 qemu_args="${args[*]}"
 printf "Starting qemu with options $qemu_args\n"
 $qemu $qemu_args
+popd > /dev/null
