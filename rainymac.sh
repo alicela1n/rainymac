@@ -17,6 +17,7 @@ args+=("-M $machine")
 args+=("-cpu $cpu")
 args+=("-hda $hdd")
 args+=("-boot $bootdevice")
+
 # Probably not so efficient but whatever it works
 if [ $cdrom == on ]
 then
@@ -42,6 +43,11 @@ then
 elif [ $networking == off ]
 then
     args+=("-nic none")
+fi
+
+if [ $usbtablet == on ]
+then
+    args+=("-device usb-tablet")
 fi
 
 if [ $accelerate_with_tcg == on ]
