@@ -1,4 +1,5 @@
 # rainymac
+Use QEMU to emulate a PPC Mac, with ease.
 Easy setup PPC versions of Mac OS X in QEMU!
 ![screenshot](/screenshots/screenshot.png)
 
@@ -9,6 +10,10 @@ Easy setup PPC versions of Mac OS X in QEMU!
 * ISO of the version of OS X you want, you can download Tiger with `./download-osx.sh`
 * qemu-system-ppc installed
 * aria2 (for downloading iso)
+
+# Notes on Wayland
+Since Wayland requires USB tablet emulation for the mouse to work correctly. I enabled it in the default config because it works fine in Tiger, unknown whether or not it works
+fine in other versions, you'll have to test that on your own, disable if it causes issues, check `rainymac.cfg`.
 
 # Installation
 If you don't already have an iso you can download Tiger by running `./download-osx.sh`.
@@ -80,3 +85,4 @@ Add the path to your bash_profile with this command:
 $ echo "export PATH=/usr/local/sbin:/usr/local/bin:$PATH" >> ~/.bash_profile
 ```
 Install packages using `brew install` or get help with `brew help`.
+
