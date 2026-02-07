@@ -50,9 +50,12 @@ then
     args+=("-device usb-tablet")
 fi
 
-if [ $accelerate_with_tcg == on ]
+if [ $accelerate_with_tcg == on ] && [ $multicore == on ]
 then
-    args+=("-accel tcg")
+    args+=("-accel tcg,thread=multi,tb-size=$tb_size")
+elif [ $accelerate_with_tcg == on ]
+then
+    args+=("-accel tcg,tb-size=$tb_size")
 fi
 
 if [ $ssh_forward == on ]
